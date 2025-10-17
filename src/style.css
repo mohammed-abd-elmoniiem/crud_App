@@ -75,7 +75,9 @@ section.products div.product p.price{
   font-size: 15px;
   color: black;
 }
-
+div:has(input[type="search"]){
+  max-width: 700px;
+}
 i{
   font-size: 20px !important;
   transition: transform 0.5s;
