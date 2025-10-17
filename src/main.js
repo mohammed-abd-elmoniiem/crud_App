@@ -1,6 +1,7 @@
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
+import './style.css'
 
 var productName = document.getElementById('product-name');
 var productPrice = document.getElementById('product-price');
@@ -9,7 +10,7 @@ var productCategory = document.getElementById('product-category');
 var productDescription = document.getElementById('product-description');
 var productImage = document.getElementById('product-image');
 var productsSection = document.getElementById('products-section');
-const addButton = document.getElementById("add");
+
 
 
 
@@ -39,6 +40,17 @@ window.addProduct = function addProduct(){
 }
 // ////////////////////////////////////////////////////////////////
 
+// create new product object+++++++++++++++++++++++++++++++++++++++
+function createProduct(){
+    return{
+        productName:productName.value || 'no name',
+        productPrice:productPrice.value || '0',
+        productCategory:productCategory.value || 'no category',
+        productDescription:productDescription.value || 'good',
+        productImage:productImage.files[0].name ||'not found'
+    }
+}
+// ----------------------------------------------------------------
 
 
 // store to local storage +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -68,17 +80,6 @@ function resetInputs(){
 // --------------------------------
 
 
-// create new product object+++++++++++++++++++++++++++++++++++++++
-function createProduct(){
-    return{
-        productName:productName.value,
-        productPrice:productPrice.value,
-        productCategory:productCategory.value,
-        productDescription:productDescription.value,
-        productImage:productImage.files[0].name
-    }
-}
-// ----------------------------------------------------------------
 
 
 // delete product ++++++++++++
