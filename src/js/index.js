@@ -1,3 +1,7 @@
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import '@fortawesome/fontawesome-free/css/all.min.css'
+
 var productName = document.getElementById('product-name');
 var productPrice = document.getElementById('product-price');
 var productCategory = document.getElementById('product-category');
@@ -5,8 +9,7 @@ var productCategory = document.getElementById('product-category');
 var productDescription = document.getElementById('product-description');
 var productImage = document.getElementById('product-image');
 var productsSection = document.getElementById('products-section');
-
-
+const addButton = document.getElementById("add");
 
 
 
@@ -17,9 +20,6 @@ var productsList = retrieveSavedProducts();
 
 displayProducts(productsList)
 
-document.addEventListener('click',event=>{
-  addProduct();
-})
 
 /* 
 
@@ -28,7 +28,8 @@ document.addEventListener('click',event=>{
   3- storeLocal() => update the data stored in the localStorage with new product 
 
 */
-function addProduct(){
+
+window.addProduct = function addProduct(){
 
     productsList.unshift(createProduct())
 
@@ -84,12 +85,18 @@ function createProduct(){
 // update localestorage
 // update ui
 
-function deleteProduct(productIndex){
-productsList.splice(productIndex,1);
-  displayProducts(productsList)
-  storeLocal();
 
-}
+
+
+
+window.deleteProduct = function(productIndex){
+    
+  productsList.splice(productIndex,1);
+  displayProducts(productsList);
+   storeLocal();
+};
+
+
 
 // add products in html ++++++++++++++++++++++++++++++++++++++++
 function displayProducts(products){
@@ -114,7 +121,7 @@ function displayProducts(products){
             <p class="price">${products[i].productPrice}</p>
             <div class="">
               <i class="fa-solid fa-pen-to-square"></i>
-              <i class="fa-solid fa-trash" onclick= "deleteProduct(${i})" ></i>
+              <i class="fa-solid fa-trash " id="delete" onclick = "deleteProduct(${i})"  ></i>
             </div>
           </div>
         </div>
@@ -128,7 +135,7 @@ function displayProducts(products){
 
 
 // search ++++++++++++++++++++++++++++++++++++++
-function seachProduct(searchValue){
+window.seachProduct =  function seachProduct(searchValue){
 
   var filterList = []
 
