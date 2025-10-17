@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>crud_app</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body class="pb-5">
+    <nav class="container text-center p-5">
+      <h1 class="mx-auto text-capitalize rounded-2">mystore</h1>
+    </nav>
+    <header class="container py-5">
+      <div class="inputs-section mx-auto row p-3">
+        <div class="col-md-6">
+          <div class="form-floating mb-3 shadow">
+            <input
+              type="text"
+              class="form-control border-0"
+              id="product-name"
+              placeholder="name"
+            />
+            <label for="product-name">product name</label>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-floating mb-3 shadow">
+            <input
+              type="number"
+              class="form-control border-0"
+              id="product-price"
+              placeholder="name"
+            />
+            <label for="product-price">product price</label>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-floating mb-3 shadow">
+            <select
+              name="category"
+              class="form-select border-0"
+              id="product-category"
+            >
+              <option hidden disabled selected id="option">
+                choose the product category
+              </option>
+              <option>TV</option>
+              <option>mobile phone</option>
+              <option>tabs</option>
+              <option>camera</option>
+              <option>printer</option>
+              <option>airpuds</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-floating mb-3 shadow">
+            <input
+              type="file"
+              class="form-control border-0"
+              id="product-image"
+              placeholder="name"
+            />
+            <label for="product-image">product image</label>
+          </div>
+
+          <datalist for="product-image">
+            <option>Oraimo5.jpg</option>
+          </datalist>
+        </div>
+        <div class="">
+          <div class="form-floating mb-3 shadow">
+            <textarea
+              class="form-control border-0"
+              id="product-description"
+              placeholder="name"
+            ></textarea>
+            <label for="product-description">product drescription</label>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-info text-white" onclick="addProduct()">
+            add product
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="form-floating mb-3 shadow">
+        <input
+          type="search"
+          class="form-control border-0"
+          id="product-price"
+          placeholder="name"
+          oninput="seachProduct(this.value)"
+        />
+        <label for="product-price">search</label>
+      </div>
+    </div>
+    <section
+      class="products container mx-auto row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3"
+      id="products-section"
+    ></section>
+    <script type="module" src="/src/js/main.js" defer></script>
+    <script src="./src/js/index.js"></script>
+  </body>
+</html>
