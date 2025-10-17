@@ -10,7 +10,6 @@ var productsSection = document.getElementById('products-section');
 
 
 
-
 // read saved product from the local storage
 var productsList = retrieveSavedProducts();
 
@@ -18,6 +17,9 @@ var productsList = retrieveSavedProducts();
 
 displayProducts(productsList)
 
+document.addEventListener('click',event=>{
+  addProduct();
+})
 
 /* 
 
@@ -32,7 +34,7 @@ function addProduct(){
 
     displayProducts(productsList);
     storeLocal();
-    resetInputs()
+    resetInputs();
 }
 // ////////////////////////////////////////////////////////////////
 
@@ -58,10 +60,8 @@ function resetInputs(){
      document.getElementById('option').selected = true
       productName.value= null;
       productPrice.value= null;
-     
-  
       productDescription.value= null;
-      productImage.files[0]=null ;
+     
 
 }
 // --------------------------------
