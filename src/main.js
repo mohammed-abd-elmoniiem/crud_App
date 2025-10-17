@@ -42,12 +42,13 @@ window.addProduct = function addProduct(){
 
 // create new product object+++++++++++++++++++++++++++++++++++++++
 function createProduct(){
+  const defaultImage = 'https://www.apple.com/newsroom/images/2024/09/apple-debuts-iphone-16-pro-and-iphone-16-pro-max/article/Apple-iPhone-16-Pro-hero-240909_inline.jpg.large.jpg'
     return{
         productName:productName.value || 'no name',
         productPrice:productPrice.value || '0',
         productCategory:productCategory.value || 'no category',
         productDescription:productDescription.value || 'good',
-        productImage:productImage.files[0].name ||'not found'
+        productImage:productImage.files[0].name ||defaultImage
     }
 }
 // ----------------------------------------------------------------
