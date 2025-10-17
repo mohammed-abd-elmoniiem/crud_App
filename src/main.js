@@ -46,8 +46,7 @@ function createProduct(){
     return{
         productName:productName.value || 'airpuds oraimo5',
         productPrice:productPrice.value || '1200',
-        productCategory:productCategory.value || 'headphone'
-        ,
+        productCategory:productCategory.value || 'headphone',
         productDescription:productDescription.value || 'good',
         productImage:productImage.files[0] != undefined ? productImage.files[0].name : defaultImage
     }
@@ -112,7 +111,7 @@ function displayProducts(products){
           <div class="image mb-2">
             <img
               class="w-100 h-100 object-fit-contain d-block"
-              src="/public/images/${products[i].productImage}"
+              src="/images/${products[i].productImage}"
               alt="product image"
             />
           </div>
