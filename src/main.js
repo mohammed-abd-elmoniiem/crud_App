@@ -42,13 +42,14 @@ window.addProduct = function addProduct(){
 
 // create new product object+++++++++++++++++++++++++++++++++++++++
 function createProduct(){
-  const defaultImage = 'https://www.apple.com/newsroom/images/2024/09/apple-debuts-iphone-16-pro-and-iphone-16-pro-max/article/Apple-iPhone-16-Pro-hero-240909_inline.jpg.large.jpg'
+  const defaultImage = 'Oraimo5.jpg'
     return{
-        productName:productName.value || 'no name',
-        productPrice:productPrice.value || '0',
-        productCategory:productCategory.value || 'no category',
+        productName:productName.value || 'airpuds oraimo5',
+        productPrice:productPrice.value || '1200',
+        productCategory:productCategory.value || 'headphone'
+        ,
         productDescription:productDescription.value || 'good',
-        productImage:productImage.files[0].name ||defaultImage
+        productImage:productImage.files[0] != undefined ? productImage.files[0].name : defaultImage
     }
 }
 // ----------------------------------------------------------------
@@ -111,7 +112,7 @@ function displayProducts(products){
           <div class="image mb-2">
             <img
               class="w-100 h-100 object-fit-contain d-block"
-              src="./public/images/${products[i].productImage}"
+              src="/public/images/${products[i].productImage}"
               alt="product image"
             />
           </div>

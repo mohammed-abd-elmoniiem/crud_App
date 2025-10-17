@@ -54,6 +54,7 @@ section.products div.product div.image{
   height: 150px;
   display: flex;
   align-items: center;
+  background-color: #ffffff;
   
 
 }
